@@ -1,0 +1,483 @@
+@media only screen and (max-width: 1000px) {
+  canvas {
+    width: 100%;
+    height: auto;
+    min-width: fit-content;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 120px;
+    min-width: fit-content;
+  }
+
+  .navbar #logo {
+    margin-bottom: 20px;
+  }
+
+  .navbar nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: x-large;
+    font-weight: 700;
+  }
+  .about-content {
+    margin: 20px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+    min-width: fit-content;
+    margin-right: 0;
+  }
+
+  .circle-container {
+    margin: 20px 0;
+  }
+
+  .circle {
+    display: none;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .search-container {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-container button {
+    width: 40%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .country-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .country-card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+
+  .weather-container {
+    margin-top: 50px;
+  }
+
+  footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  animation: gradientAnimation 20s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 25px;
+  flex-grow: 1;
+}
+
+.container {
+  width: 90%;
+  height: 1000%;
+  text-align: center;
+  margin-right: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  max-width: 400px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2px 20px 2px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5)
+  );
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateX(5px);
+}
+
+button:hover:before {
+  transform: translateX(100%);
+}
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  justify-items: center;
+}
+
+.country-card {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  padding: 15px 15px 20px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.country-card button {
+  margin-top: auto;
+}
+
+.country-card:hover {
+  transform: scale(1.05);
+}
+
+.country-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  margin: 20px auto;
+  background-color: #e2e9ee;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  height: 80vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#modalOtherImages img {
+  margin: 20px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+}
+
+.weather-container {
+  width: 48%;
+  text-align: center;
+  padding: 20px 20px 35px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  height: 100%;
+  background-image: url("https://www.treehugger.com/thmb/H31szj1cWC91tTQbsLFzo9H5Hd8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2018__08__CollectionOfCloudsAgainstABlueSky-8cae9f3109d14dcf98d9facc5775222f.jpg");
+  background-size: cover;
+  color: #03203f;
+}
+
+.weather-info {
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 20px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+.city-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.search-container button {
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.weather-container button {
+  margin-top: 1rem;
+}
+
+#title-container {
+  text-align: center;
+  padding-top: 40px;
+  color: #fafafa;
+  transform: translateX(-50%);
+  animation: titleAnimation 2s ease-in-out infinite;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: scale(1) rotateY(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotateY(0deg);
+  }
+  100% {
+    transform: scale(1) rotateY(360deg);
+  }
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 90px;
+  margin: 90px 50px 50px 50px;
+  color: #fff;
+}
+
+.circle-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0px 0px 0px;
+}
+
+.circle {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background-image: url("https://pngfre.com/wp-content/uploads/bush-png-from-pngfre-20.png");
+  background-size: cover;
+  border-radius: 50%;
+  animation: moveAndRotateCircle 20s linear infinite;
+}
+
+@keyframes moveAndRotateCircle {
+  0%,
+  100% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    left: calc(100% - 50px);
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5996cf;
+  padding: 10px 20px;
+  height: 100px;
+  font-size: larger;
+}
+
+.navbar #logo {
+  color: #fafafa;
+  font-size: 20px;
+}
+
+.navbar #logo a {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.navbar nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.navbar nav ul li {
+  margin-right: 20px;
+}
+
+.navbar nav ul li a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+  color: #ccc;
+}
+
+nav a {
+  margin-right: 70px;
+}
+
+#logo {
+  text-align: center;
+  padding-top: 40px;
+  color: #fafafa;
+  transform: translateX(-50%);
+  animation: titleAnimation 2s ease-in-out infinite;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: scale(1) rotateY(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotateY(0deg);
+  }
+  100% {
+    transform: scale(1) rotateY(360deg);
+  }
+}
+
+.logo-link {
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #0056b3;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.about-content {
+  background-color: rgb(8, 127, 163);
+  padding: 20px;
+  max-width: fit-content;
+  width: 1000px;
+  margin-top: 50px;
+  border-radius: 10%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+}
+
+.about-title {
+  color: white;
+}
+
+.about-text {
+  color: white;
+  font-size: medium;
+}
