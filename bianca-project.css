@@ -9,12 +9,11 @@
     flex-direction: column;
     height: auto;
     padding: 20px;
-    margin-bottom: 120px;
     min-width: fit-content;
   }
 
   .navbar #logo {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .navbar nav ul li {
@@ -78,6 +77,19 @@
     margin-top: 50px;
   }
 
+  .text-container {
+    width: 100%;
+    max-width: fit-content;
+    min-width: fit-content;
+  }
+
+  .discover-text {
+    line-height: 1.5em;
+    text-align: center;
+    min-width: fit-content;
+    margin: 50px 0px;
+  }
+
   footer {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -93,10 +105,6 @@ header {
 canvas {
   width: 100%;
   height: auto;
-}
-
-h1 {
-  margin-bottom: 50px;
 }
 
 body {
@@ -125,7 +133,7 @@ main {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  margin-top: 25px;
+  margin-top: none;
   flex-grow: 1;
 }
 
@@ -363,6 +371,7 @@ footer {
 
 .circle {
   position: absolute;
+  margin-bottom: 50px;
   width: 55px;
   height: 55px;
   background-image: url("https://pngfre.com/wp-content/uploads/bush-png-from-pngfre-20.png");
@@ -386,34 +395,47 @@ footer {
 .navbar {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4px;
   align-items: center;
   background-color: #5996cf;
-  padding: 10px 20px;
-  height: 100px;
+  padding: 0px 20px;
   font-size: larger;
+  height: fit-content;
+  border: 1px solid #94c1eb;
 }
 
 .navbar #logo {
   color: #fafafa;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .navbar #logo a {
   color: #fafafa;
   text-decoration: none;
+  padding: 8px 20px;
 }
 
 .navbar nav ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10px 0px;
   margin: 0;
   display: flex;
   font-size: x-large;
   font-weight: 700;
+  justify-content: space-between;
 }
 
 .navbar nav ul li {
+  display: inline-block;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px 20px;
   margin-right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar nav ul li:last-child {
+  margin-right: 0;
 }
 
 .navbar nav ul li a {
@@ -426,13 +448,8 @@ footer {
   color: #ccc;
 }
 
-nav a {
-  margin-right: 70px;
-}
-
 #logo {
   text-align: center;
-  padding-top: 40px;
   color: #fafafa;
   transform: translateX(-50%);
   animation: titleAnimation 2s ease-in-out infinite;
@@ -454,7 +471,7 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   border: 2px solid #ffffff;
-  padding: 10px 20px;
+  padding: 0px 20px;
   border-radius: 10px;
   transition: all 0.3s ease;
   background-color: #0056b3;
@@ -468,6 +485,7 @@ nav a {
   max-width: fit-content;
   width: 1000px;
   margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 10%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: large;
@@ -481,3 +499,39 @@ nav a {
   color: white;
   font-size: medium;
 }
+
+.discover-text,
+.travel-tips-section p,
+.travel-tips-section h1 {
+  font-family: "Arial", sans-serif;
+  font-size: 23px;
+  color: #333;
+  line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.additional-text,
+.travel-tips-section ol {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #4d4a4a;
+  line-height: 1.4;
+  text-align: center;
+  text-align: left;
+}
+
+.text-container {
+  width: 100%;
+  margin: 0px 7rem;
+  font-weight: bolder;
+  max-width: fit-content;
+  min-width: fit-content;
+  margin-top: 30px;
+}
+
+.travel-tips-section {
+  margin-top: 3rem;
+  margin-left: 7rem;
+  margin-right: 7rem;
+}
+
